@@ -127,3 +127,87 @@ body {
 	background: #27AE60;
 	color: white;
 }
+/*Messages*/
+.cd-popup {
+	position: fixed;
+  	left: 0;
+  	top: 0;
+  	height: 100%;
+  	width: 100%;
+  	background-color: rgba(255, 255, 255, 0.9);
+  	opacity: 0;
+  	visibility: hidden;
+  	-webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  	-moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  	transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+ 
+.cd-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+ 
+.cd-popup-container {
+    position: relative;
+  	width: 90%;
+  	max-width: 400px;
+  	margin: 4em auto;
+  	background: #FFF;
+  	border-radius: .25em .25em .4em .4em;
+  	text-align: center;
+  	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  	-webkit-transform: translateY(-40px);
+  	-moz-transform: translateY(-40px);
+  	-ms-transform: translateY(-40px);
+  	-o-transform: translateY(-40px);
+  	transform: translateY(-40px);
+  	-webkit-backface-visibility: hidden;
+  	-webkit-transition-property: -webkit-transform;
+  	-moz-transition-property: -moz-transform;
+  	transition-property: transform;
+  	-webkit-transition-duration: 0.3s;
+ 	-moz-transition-duration: 0.3s;
+ 	transition-duration: 0.3s;
+}
+.cd-popup-container p {
+  padding: 3em 1em;
+}
+.cd-popup-container .cd-buttons a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #FFF;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.cd-popup-container .cd-buttons li:hover{
+	opacity: 0.95;
+}
+.cd-popup-container .cd-buttons li:first-child a {
+  background: #27AE60;
+  border-radius: 0 0 0 .25em;
+  text-decoration: none;
+}
+.cd-popup-container li{
+	list-style: none;
+}
+.cd-popup-container .cd-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+}
+.img-replace {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+}
+.is-visible .cd-popup-container {
+  transform: translateY(0);
+}

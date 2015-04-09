@@ -23,11 +23,6 @@ if(isset($_REQUEST['cnf'])){
 	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/garlic.js"></script>
 	<script type="text/javascript" src="js/parsley.min.js"></script>
-	<?php if(isset($message)){?>
-			<script type="text/javascript">
-				alert("<?=$message?>");
-			</script>
-	<?php }?>
 	<link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body class="fuelux">
@@ -76,7 +71,23 @@ if(isset($_REQUEST['cnf'])){
 		<input type="submit" name="submit" class="submit action-button" value="<?=$lang->values['submit']?>" />
 	</fieldset>
 </form>
+<div class="cd-popup" role="alert">
+	<div class="cd-popup-container">
+		<p class="message-popup"><?=$message?></p>
+		<ul class="cd-buttons">
+			<li class="setLocation"><a href="#0" ><?=$lang->values['accept']?></a></li>
+		</ul>
+		<a href="#0" class="cd-popup-close img-replace">Close</a>
+	</div> <!-- cd-popup-container -->
+</div> <!-- cd-popup -->
 <script type="text/javascript" src="js/steps.js"></script>
+<?php if(isset($message)){?>
+			<script type="text/javascript">
+			$(document).ready(function(){
+					$('.cd-popup').addClass('is-visible');
+				})
+			</script>
+	<?php }?>
 <script src="js/jquery.easing.min.js" type="text/javascript"></script>
 </body>
 </html>

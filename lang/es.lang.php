@@ -34,7 +34,8 @@
                            'department'   =>'Departamento',
                            'country'      =>'País',
                            'phone'        =>'Teléfono',
-                           'message'      =>'Escriba su mensaje aquí'
+                           'message'      =>'Escriba su mensaje aquí',
+                           'accept'       =>'Aceptar'
                            );
     }
   }

@@ -4,20 +4,20 @@
     public $values;
 
     public function langEN(){
-     $this->values = array('messageTrue'  =>'Su solicitud se ha generado con éxito.',
-                           'messsageFalse'=>'Problemas al generar la solicitud.',
-                           'messageExists'=>'Ya existe un registro.',
+     $this->values = array('messageTrue'  =>'Your message has been successfully sent.',
+                           'messsageFalse'=>'There has been a problem sending your message.',
+                           'messageExists'=>'User already exists.',
                            'lang'         =>'en',
                            'firstTitle'   =>'Personal Data',
-                           'secondTitle'  =>'Información Adicional',
+                           'secondTitle'  =>'Aditional informacion',
                            'firstStep'    =>'First Step',
                            'secondStep'   =>'Second Step',
                            'document'     =>'Document',
                            'doctype'      =>'Document Type',
-                           'doctypeO1'    =>'Tarjeta de Identidad',
-                           'doctypeO2'    =>'Cédula de Ciudadanía',
-                           'doctypeO3'    =>'Cédula de Extranjeria',
-                           'doctypeO4'    =>'Pasaporte',
+                           'doctypeO1'    =>'Identity card',
+                           'doctypeO2'    =>'Citizen card',
+                           'doctypeO3'    =>'Resident card',
+                           'doctypeO4'    =>'Pasport',
                            'name'         =>'First Name',
                            'sname'        =>'Second Name',
                            'lname'        =>'First Lastname',
@@ -34,7 +34,8 @@
                            'department'   =>'State',
                            'country'      =>'Country',
                            'phone'        =>'Phone',
-                           'message'      =>'Write your message here'
+                           'message'      =>'Write your message here',
+                           'accept'       =>'Accept'
                            );
     }
   }
