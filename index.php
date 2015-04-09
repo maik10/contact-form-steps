@@ -1,6 +1,8 @@
 <?php 
 include_once('lang/es.lang.php');
+include_once('clases/option.php');
 $lang = new langES();
+$list = new option();
 if(isset($_REQUEST['lang'])){
 	if($_REQUEST['lang']=='en'){
 		include_once('lang/en.lang.php');
@@ -63,7 +65,10 @@ if(isset($_REQUEST['cnf'])){
 		<input type="text" name="address" id="address" class="validateSubmitField" placeholder="<?=$lang->values['address']?>" />
 		<input type="text" name="city" id="city" class="validateSubmitField" placeholder="<?=$lang->values['city']?>" />
 		<input type="text" name="department" class="validateSubmitField" id="department" placeholder="<?=$lang->values['department']?>" />
-		<input type="text" name="country" class="validateSubmitField" id="country" placeholder="<?=$lang->values['country']?>" />
+		<select name="country" id="country" class="validateSubmitField">
+			<option value=""><?=$lang->values['country']?></option>
+			<?=$list->getCountrys()?>
+		</select>
 		<input type="hidden" name="lang" value="<?=$lang->values['lang']?>">
 		<input type="text" name="phone" class="validateSubmitField" id="phone" placeholder="<?=$lang->values['phone']?>" />
 		<textarea name="message" class="validateSubmitField" placeholder="<?=$lang->values['message']?>" id="message"></textarea>
