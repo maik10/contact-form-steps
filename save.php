@@ -13,34 +13,43 @@
 	$country = $_POST['country'];
 	$gender = $_POST['gender'];
 	$document = $_POST['document'];
-	$typeDocument = $_POST['doctype'];
-	$message = $_POST['message'];
-	$query = "SELECT * FROM prospects WHERE semail='".$email."' OR sidentif='".$document."'";
-	if($result = $conn->query($query)){
-		 if ($result->fetchColumn() > 0) {
-		 	header("location:/form/index.php?cnf=exists");
-		 	exit();
-		 }
-	}
-	$sql = "INSERT INTO prospects (sname,slast,dcontact,semail,saddress,scity,sstate,scountry,ngender,sidentif,nidentype,smessage) VALUES (:sname,:slast,:dcontact,:semail,:saddress,:scity,:sstate,:scountry,:ngender,:sidentif,:nidentype,:smessage)";
-	$q = $conn->prepare($sql);
-	if($q->execute(array(':sname'=>$name,
-                  	  ':slast'=>$lastName,
-                  	  ':dcontact'=>$date,
-                  	  ':semail'=>$email,
-                  	  ':saddress'=>$address,
-                  	  ':scity'=>$city,
-                  	  ':sstate'=>$state,
-                  	  ':scountry'=>$country,
-                  	  ':ngender'=>$gender,
-                  	  ':sidentif'=>$document,
-                  	  ':nidentype'=>$typeDocument,
-                  	  ':smessage'=>$message
-                  	  ))
-		){
-		header("location:/form/index.php?cnf=true");
-	}else{
-		header("location:/form/index.php?cnf=false");
-	}
+	$phone = $_POST['phone'];
+	$lang = $_POST['lang'];
+    $typeDocument = $_POST['doctype'];
+    $message = $_POST['message'];
+    $query = "SELECT * FROM prospects WHERE semail='".$email."' OR sidentif='".$document."'";
+    $langString = "";
+    if($lang == "en"){
+    	$langString = "&lang=en";
+    }
+    if($result = $conn->query($query)){
+        if ($result->fetchColumn() > 0) {
+            header("location:index.php?cnf=exists".$langString);
+            exit();
+        }
+    }
+        $sql = "INSERT INTO prospects (sname,slast,nassigned,nstatus,dcontact,sphone,semail,saddress,scity,sstate,scountry,ngender,sidentif,nidentype,smessage) VALUES (:sname,:slast,:nassigned,:nstatus,:dcontact,:sphone,:semail,:saddress,:scity,:sstate,:scountry,:ngender,:sidentif,:nidentype,:smessage)";
+        $q = $conn->prepare($sql);
+        if($q->execute(array(':sname'=>$name,
+                          ':slast'=>$lastName,
+                          ':nassigned'=>0,
+                          ':nstatus'=>10,
+                          ':dcontact'=>$date,
+                          ':sphone'=>$phone,
+                          ':semail'=>$email,
+                          ':saddress'=>$address,
+                          ':scity'=>$city,
+                          ':sstate'=>$state,
+                          ':scountry'=>$country,
+                          ':ngender'=>$gender,
+                          ':sidentif'=>$document,
+                          ':nidentype'=>$typeDocument,
+                          ':smessage'=>$message
+                          ))
+                ){
+                header("location:index.php?cnf=true".$langString);
+        }else{
+                header("location:index.php?cnf=false".$langString);
+        }
 
 ?>
