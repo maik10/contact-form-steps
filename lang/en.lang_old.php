@@ -9,7 +9,7 @@
                            'messageExists'=>'User already exists.',
                            'lang'         =>'en',
                            'firstTitle'   =>'Personal Data',
-                           'secondTitle'  =>'Additional information',
+                           'secondTitle'  =>'Aditional informacion',
                            'firstStep'    =>'First Step',
                            'secondStep'   =>'Second Step',
                            'document'     =>'Document',
@@ -34,7 +34,8 @@
                            'department'   =>'State',
                            'country'      =>'Country',
                            'phone'        =>'Phone',
-                           'message'      =>'Write your message here'
+                           'message'      =>'Write your message here',
+                           'accept'       =>'Accept'
                            );
     }
   }
